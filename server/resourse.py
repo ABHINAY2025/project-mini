@@ -15,7 +15,9 @@ tokenizer = MarianTokenizer.from_pretrained(model_name)
 model = MarianMTModel.from_pretrained(model_name)
 
 app = Flask(__name__)
-CORS(app)
+
+# Configure CORS
+CORS(app, resources={r"/*": {"origins": "https://mini-project-nka2htdww-abhinay2025s-projects.vercel.app"}})
 
 @app.route('/pos', methods=['POST'])
 def pos_tagging():
