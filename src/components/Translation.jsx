@@ -15,7 +15,7 @@ const Translator = () => {
   // Function to fetch parts of speech
   const fetchPartsOfSpeech = async (translated) => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/pos', { text: translated });
+      const response = await axios.post('https://mini-project-9g4ge5k99-abhinay2025s-projects.vercel.app/pos', { text: translated });
       return response.data;
     } catch (error) {
       console.error('Error fetching parts of speech:', error);
@@ -72,7 +72,7 @@ const Translator = () => {
     setLoadingKeywords(true);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/translate_keywords', { text: [inputText] });
+      const response = await axios.post('https://mini-project-9g4ge5k99-abhinay2025s-projects.vercel.app/translate_keywords', { text: [inputText] });
       setKeywords(response.data); 
 
       toast.success('Keywords translated successfully!', {
